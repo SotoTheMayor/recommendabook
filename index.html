@@ -7,6 +7,20 @@
     <title>Book Recommender</title>
     <link rel="stylesheet" href="./assets/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          colors: {
+      'color1': '#C1A98C',
+      'color2': '#7e5bef',
+      'color3': '#ff49db',
+          },
+          
+      
+        },
+        },
+      
+      </script>
   </head>
   <body>
 
@@ -14,34 +28,29 @@
     <!-- original image dimensions: width="1430" height="200" -->
             <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"  alt="Open Library logo">
     <main class="flex h-screen">
-      <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-slate-400"> 
+      <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-slate-300"> 
        <div class="title">
-        <h1 class="text-2xl">Books Library</h1>
+        <h1 class="text-3xl font-serif">Books Library</h1>
        </div>
        <div class="pt-2 pb-2">
         <input type="text" placeholder="search your book here" />
        </div>
        <div class="history">
-        <h1 class="text-xl">Books History</h1>
+        <h1 class="text-xl font-serif">Books History</h1>
        </div>
       </div>
 
-      <div class="h-full m-6 p-3 w-3/5 border-2 box-border mainPart">
-        <h1 class="text-4xl text-center">Book Recommendations</h1>
-
+      <div class="h-full m-6 p-3 w-3/5 border-0 box-border mainPart">
+        <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
         <ul id="bookRecommendations" class="list-none text-sm"></ul>
-
       </div>
-
-      <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-slate-400">
-        <h1 class="text-2xl">Topics</h1>
-
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="romance">ROMANCE</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="history">HISTORY</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="thriller">THRILLER</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="religion">RELIGION</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="kids">KIDS BOOKS</button>
-
+      <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-slate-300">
+        <h1 class="text-3xl font-serif">Topics</h1>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="romance">ROMANCE</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="history">HISTORY</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="thriller">THRILLER</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="religion">RELIGION</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="kids"> KIDS BOOKS</button>
         </button>
       </div>
     </main>
