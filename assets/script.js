@@ -1,5 +1,5 @@
-let bookSearch = document.querySelector("#searchBox")
-
+let bookSearch = $("#searchBox")
+let bookRecommendation = $("#bookRecommendations")
 $(document).ready(function(){
 // var cat = $(".recommendation")
 var cat = $(".reviewImage")
@@ -29,6 +29,7 @@ fetch(requestUrl)
 function searchBooks() {
     let book = bookSearch.value;
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
+    bookSearch.value = "";
 
 
     fetch(bookUrl)
@@ -37,12 +38,21 @@ function searchBooks() {
     })
     .then(function (data) {
         console.log(data);
+        i = 0;
+        bookRecommendation.html("");
+        do {
+            let bookRecommend = '<li>Title:  ' + data.items[i].volumeInfo.title + '</li>';
+            bookRecommendation.append(bookRecommend);
+            console.log(data.items[i].volumeInfo.title);
+            i++;
+        } while (i < 10);
     })
-
 }
+
 
 function openpart(topics) {
     console.log(topics);
     bookSearch.value = (topics);
     searchBooks();
-};
+}
+
