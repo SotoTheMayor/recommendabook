@@ -25,21 +25,15 @@ let image = new Image();
     textReview.text(textArr[Math.floor(Math.random() * 4)]);
 
 
-sBtn.click(function() {
-    topics = $(this).attr("id")
-    console.log(topics);
-    bookSearch.value = topics;
-    searchBooks();
-    appendCat(topics);
-})
-
-
+    
+    
 function appendCat(topics) {
     console.log(topics)
+    $('img').remove('.removeImg')
     if (topics == "romance") {
-        mainPart.append("<img src=" + romance + " width='500' height='600'>")
+            mainPart.append("<img src=" + romance + " width='500' height='600'>")
     } else if (topics == "history") {
-        mainPart.append("<img src=" + history + " width='500' height='600'>")
+            mainPart.append("<img src=" + history + " width='500' height='600'>")
     } else if (topics == "thriller") {
         mainPart.append("<img src=" + thriller + " width='500' height='600'>")
     } else if (topics == "religion") {
@@ -47,11 +41,12 @@ function appendCat(topics) {
     } else if (topics == "kids") {
         mainPart.append("<img src=" + kids + " width='500' height='600'>")
     }
+    mainPart.children().eq(2).addClass("removeImg")
 }
 
 
-    
-    
+
+
 
 function searchBooks() {
     let book = bookSearch.value;
@@ -74,6 +69,14 @@ function searchBooks() {
         } while (i < 10);
     })
 }
+
+sBtn.click(function() {
+    topics = $(this).attr("id")
+    console.log(topics);
+    bookSearch.value = topics;
+    searchBooks();
+    appendCat(topics);
+})
 
 
 })
