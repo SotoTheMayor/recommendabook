@@ -31,7 +31,7 @@
         <h1>Books History</h1>
     <header></header>
     <!-- original image dimensions: width="1430" height="200" -->
-            <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"  alt="Open Library logo">
+          
     <main class="flex h-screen">
       <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-slate-400"> 
        <div class="title">
@@ -47,7 +47,10 @@
 
       <div class="h-full m-6 p-3 w-3/5 border-2 box-border mainPart">
         <h1 class="text-4xl text-center">Book Recommendations</h1>
-    
+
+        <ul id="bookRecommendations" class="list-none text-sm"></ul>
+
+      </div>
       <div class="topics">
         <h1>Topics</h1>
         <button class="btn" onclick="openpart('romance')">ROMANCE</button>
@@ -58,11 +61,13 @@
 
       <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-slate-400">
         <h1 class="text-2xl">Topics</h1>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2" onclick="openpart('romance')">ROMANCE</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2" onclick="openpart('history')">HISTORY</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2" onclick="openpart('thriller')">THRILLER</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2" onclick="openpart('religion')">RELIGION</button>
-        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2" onclick="openpart('kids books')"> KIDS BOOKS</button>
+
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="romance">ROMANCE</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="history">HISTORY</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="thriller">THRILLER</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="religion">RELIGION</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="kids">KIDS BOOKS</button>
+
         </button>
       </div>
     </main>
@@ -73,9 +78,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <script src="https://cataas.com/"></script> -->
-
-
     <script src="./assets/script.js"></script>
   </body>
 </html>
