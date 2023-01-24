@@ -1,4 +1,5 @@
 
+let bookRecommendation = $("#bookRecommendations")
 $(document).ready(function(){
     // var cat = $(".recommendation")
 let bookSearch = $("#searchBox")
@@ -56,6 +57,7 @@ function appendCat(topics) {
 function searchBooks() {
     let book = bookSearch.value;
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
+    bookSearch.value = "";
 
     fetch(bookUrl)
     .then(function (response) {
@@ -63,8 +65,17 @@ function searchBooks() {
     })
     .then(function (data) {
         console.log(data);
+        i = 0;
+        bookRecommendation.html("");
+        do {
+            let bookRecommend = '<li>Title:  ' + data.items[i].volumeInfo.title + '</li>';
+            bookRecommendation.append(bookRecommend);
+            console.log(data.items[i].volumeInfo.title);
+            i++;
+        } while (i < 10);
     })
-
 }
 
+
 })
+
