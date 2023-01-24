@@ -23,6 +23,7 @@
       </script>
   </head>
   <body>
+
     <header></header>
     <!-- original image dimensions: width="1430" height="200" -->
             <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"  alt="Open Library logo">
@@ -39,17 +40,17 @@
        </div>
       </div>
 
-      <div class="h-full m-6 p-3 w-3/5 border-0 box-border">
+      <div class="h-full m-6 p-3 w-3/5 border-0 box-border mainPart">
         <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
+        <ul id="bookRecommendations" class="list-none text-sm"></ul>
       </div>
-
       <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-slate-300">
         <h1 class="text-3xl font-serif">Topics</h1>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl" onclick="openpart('romance')">ROMANCE</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl" onclick="openpart('history')">HISTORY</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl" onclick="openpart('thriller')">THRILLER</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl" onclick="openpart('religion')">RELIGION</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl" onclick="openpart('kids books')"> KIDS BOOKS</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="romance">ROMANCE</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="history">HISTORY</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="thriller">THRILLER</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="religion">RELIGION</button>
+        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="kids"> KIDS BOOKS</button>
         </button>
       </div>
     </main>
@@ -60,9 +61,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <script src="https://cataas.com/"></script> -->
-
-
     <script src="./assets/script.js"></script>
   </body>
 </html>
