@@ -21,4 +21,5 @@ fetch(requestUrl)
     var textArr = ["10/10 Would read again!", "I couldn't put it down, it was amazing!", "This book made me cry happy tears", "Nothing is better than a good book, and no book is better than this one!"]
     catReview.text(textArr[Math.floor(Math.random() * 4)]);
 
+
 })

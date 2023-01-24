@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header></header>
+
+    <header>
+       
+      </header>
             <img src="assets/Blank-1400-x-200-copy4.jpg" width="1430" height="200" alt="Open Library logo">
     <main>
       <div class="title">
         <h1>Books Library</h1>
       </div>
-      <div class="search-bar">
-        <input type="text" placeholder="search your book here" />
+      <main class="container m-3 p-5">
+        <section class="row">
+          <aside class="col d-grid gap-2 col-6 mx-auto"  >
+            <input id="bookname" type="text"/>
+        <button id="searchbutton" class="btn btn-primary m-3 p-3">
+            Search Book
+          </button>
+        
       </div>
       <div class="history">
         <h1>Books History</h1>
@@ -30,7 +39,7 @@
         <button class="btn" onclick="openpart('history')">HISTORY</button>
         <button class="btn" onclick="openpart('thriller')">THRILLER</button>
         <button class="btn" onclick="openpart('religion')">RELIGION</button>
-        <button class="btn" onclick="openpart('kids books')"> KIDS BOOKS</button>
+        <button class="btn" onclick="openpart('kids books')">KIDS BOOKS</button>
         </button>
       </div>
     </main>
