@@ -1,3 +1,5 @@
+let bookSearch = document.querySelector("#searchBox")
+
 $(document).ready(function(){
 // var cat = $(".recommendation")
 var cat = $(".reviewImage")
@@ -23,3 +25,24 @@ fetch(requestUrl)
 
 
 })
+
+function searchBooks() {
+    let book = bookSearch.value;
+    let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
+
+
+    fetch(bookUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+
+}
+
+function openpart(topics) {
+    console.log(topics);
+    bookSearch.value = (topics);
+    searchBooks();
+};
