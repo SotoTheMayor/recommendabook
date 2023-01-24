@@ -1,10 +1,11 @@
-let bookSearch = document.querySelector("#searchBox")
 
 $(document).ready(function(){
-// var cat = $(".recommendation")
+    // var cat = $(".recommendation")
+let bookSearch = $("#searchBox")
 let imgReview = $(".reviewImage")
 let textReview = $(".reviewText")
 let mainPart = $(".mainPart")
+let sBtn = $('.sBtn')
 
 let reviews = 'https://cataas.com/cat?width=250';
 let romance = 'https://cataas.com/cat?type=bubble';
@@ -13,13 +14,10 @@ let thriller = 'https://cataas.com/cat?type=startled';
 let religion = 'https://cataas.com/cat?type=christmas';
 let kids = 'https://cataas.com/cat?type=tiny-baby';
 
-// function openpart(type){
-//     mainPart.append("<img src=" + type + " width='500' height='600'>")
-// }
 
 fetch(reviews)
 
-    let image = new Image();
+let image = new Image();
     image.src = reviews;
     imgReview.append(image);
 
@@ -27,19 +25,37 @@ fetch(reviews)
     textReview.text(textArr[Math.floor(Math.random() * 4)]);
 
 
-
-
-
-
-
-
-
+sBtn.click(function() {
+    topics = $(this).attr("id")
+    console.log(topics);
+    bookSearch.value = topics;
+    searchBooks();
+    appendCat(topics);
 })
+
+
+function appendCat(topics) {
+    console.log(topics)
+    if (topics == "romance") {
+        mainPart.append("<img src=" + romance + " width='500' height='600'>")
+    } else if (topics == "history") {
+        mainPart.append("<img src=" + history + " width='500' height='600'>")
+    } else if (topics == "thriller") {
+        mainPart.append("<img src=" + thriller + " width='500' height='600'>")
+    } else if (topics == "religion") {
+        mainPart.append("<img src=" + religion + " width='500' height='600'>")
+    } else if (topics == "kids") {
+        mainPart.append("<img src=" + kids + " width='500' height='600'>")
+    }
+}
+
+
+    
+    
 
 function searchBooks() {
     let book = bookSearch.value;
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
-
 
     fetch(bookUrl)
     .then(function (response) {
@@ -51,8 +67,4 @@ function searchBooks() {
 
 }
 
-function openpart(topics) {
-    console.log(topics);
-    bookSearch.value = (topics);
-    searchBooks();
-};
+})
