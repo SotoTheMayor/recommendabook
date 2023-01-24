@@ -1,7 +1,6 @@
 
-let bookRecommendation = $("#bookRecommendations")
 $(document).ready(function(){
-    // var cat = $(".recommendation")
+let bookRecommendation = $("#bookRecommendations")
 let bookSearch = $("#searchBox")
 let imgReview = $(".reviewImage")
 let textReview = $(".reviewText")
