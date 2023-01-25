@@ -10,15 +10,17 @@
     <script>
       tailwind.config = {
         theme: {
-          colors: {
-      'color1': '#C1A98C',
-      'color2': '#7e5bef',
-      'color3': '#ff49db',
-          },
-          
-      
+          extend: {
+            colors: {
+              'color1': '#C1A98C',
+              'color2': '#cbd5e1',
+              'color3': '#e5e7eb',
+              'color4': '#7dd3fc',
+              'color5': '#ffffff',
+            },
+          },     
         },
-        },
+      };
       
       </script>
   </head>
@@ -28,7 +30,7 @@
     <!-- original image dimensions: width="1430" height="200" -->
             <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"  alt="Open Library logo">
     <main class="flex h-screen">
-      <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-slate-300"> 
+      <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-color2"> 
        <div class="title">
         <h1 class="text-3xl font-serif">Books Library</h1>
        </div>
@@ -44,7 +46,7 @@
         <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
         <ul id="bookRecommendations" class="list-none text-sm"></ul>
       </div>
-      <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-slate-300">
+      <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-color2">
         <h1 class="text-3xl font-serif">Topics</h1>
         <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="romance">ROMANCE</button>
         <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="history">HISTORY</button>
