@@ -65,7 +65,7 @@ function searchBooks() {
         do {
 
 
-            let bookRecommend = '<li class="text-center">' + data.items[i].volumeInfo.title + '   By:  ' + data.items[i].volumeInfo.authors[0] + '</li>';
+            let bookRecommend = '<li class="text-center"><button>' + data.items[i].volumeInfo.title + '   By:  ' + data.items[i].volumeInfo.authors[0] + '</button></li>';
             bookRecommendation.append(bookRecommend);
             bookRecommendation.children().eq(i).children("button").attr("id", i)
             data.items[i].volumeInfo.authors[0]
