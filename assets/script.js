@@ -9,11 +9,8 @@ let sBtn = $('.sBtn')
 
 
 let reviews = 'https://cataas.com/cat?width=250';
-let romance = 'https://cataas.com/cat?type=bubble';
-let history = 'https://cataas.com/cat?type=creation';
-let thriller = 'https://cataas.com/cat?type=startled';
-let religion = 'https://cataas.com/cat?type=christmas';
-let kids = 'https://cataas.com/cat?type=tiny-baby';
+
+
 
 
 fetch(reviews)
@@ -23,7 +20,7 @@ let image = new Image();
     imgReview.append(image);
 
     let textArr = ["10/10 Would read again!", "I couldn't put it down, it was amazing!", "This book made me cry happy tears", "Nothing is better than a good book, and no book is better than this one!"]
-    textReview.text(textArr[Math.floor(Math.random() * 4)]);
+    textReview.text(textArr[Math.floor(Math.random() * textArr.length)]);
 
 
     
@@ -31,16 +28,10 @@ let image = new Image();
 function appendCat(topics) {
     console.log(topics)
     $('img').remove('.removeImg')
-    if (topics == "romance") {
-            mainPart.append("<img src=" + romance + " width='400' height='400'>")
-    } else if (topics == "history") {
-            mainPart.append("<img src=" + history + " width='400' height='400'>")
-    } else if (topics == "thriller") {
-        mainPart.append("<img src=" + thriller + " width='400' height='400'>")
-    } else if (topics == "religion") {
-        mainPart.append("<img src=" + religion + " width='400' height='400'>")
-    } else if (topics == "kids") {
-        mainPart.append("<img src=" + kids + " width='400' height='400'>")
+    if (topics == "thriller") {
+            mainPart.append("<img src='https://cataas.com/cat?type=startled' width='400' height='400'>")
+    } else {
+            mainPart.append("<img src='https://cataas.com/cat?type=" + topics + "' width='400' height='400'>")
     }
     mainPart.children().eq(2).addClass("removeImg")
 }
