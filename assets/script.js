@@ -7,6 +7,7 @@ let textReview = $(".reviewText")
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
 
+
 let reviews = 'https://cataas.com/cat?width=250';
 let romance = 'https://cataas.com/cat?type=bubble';
 let history = 'https://cataas.com/cat?type=creation';
@@ -31,15 +32,15 @@ function appendCat(topics) {
     console.log(topics)
     $('img').remove('.removeImg')
     if (topics == "romance") {
-            mainPart.append("<img src=" + romance + " width='500' height='600'>")
+            mainPart.append("<img src=" + romance + " width='400' height='400'>")
     } else if (topics == "history") {
-            mainPart.append("<img src=" + history + " width='500' height='600'>")
+            mainPart.append("<img src=" + history + " width='400' height='400'>")
     } else if (topics == "thriller") {
-        mainPart.append("<img src=" + thriller + " width='500' height='600'>")
+        mainPart.append("<img src=" + thriller + " width='400' height='400'>")
     } else if (topics == "religion") {
-        mainPart.append("<img src=" + religion + " width='500' height='600'>")
+        mainPart.append("<img src=" + religion + " width='400' height='400'>")
     } else if (topics == "kids") {
-        mainPart.append("<img src=" + kids + " width='500' height='600'>")
+        mainPart.append("<img src=" + kids + " width='400' height='400'>")
     }
     mainPart.children().eq(2).addClass("removeImg")
 }
@@ -62,13 +63,28 @@ function searchBooks() {
         i = 0;
         bookRecommendation.html("");
         do {
-            let bookRecommend = '<li>Title:  ' + data.items[i].volumeInfo.title + '</li>';
+
+            let bookRecommend = '<li><button>Title:  ' + data.items[i].volumeInfo.title + '</button></li>';
             bookRecommendation.append(bookRecommend);
+            bookRecommendation.children().eq(i).children("button").attr("id", i)
+            data.items[i].volumeInfo.authors[0]
             console.log(data.items[i].volumeInfo.title);
             i++;
         } while (i < 10);
+        bookRecommendation.children().children("button").addClass('clickThrough')
+        
+        $('.clickThrough').click(function() {
+            bookRecommendation.html("");
+            let x = ($(this).attr("id"))
+            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li>';
+            bookRecommendation.append(drillThrough);
+        
+        })
+        
     })
 }
+
+
 
 sBtn.click(function() {
     topics = $(this).attr("id")
