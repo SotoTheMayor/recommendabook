@@ -77,7 +77,7 @@ function searchBooks() {
         $('.clickThrough').click(function() {
             bookRecommendation.html("");
             let x = ($(this).attr("id"))
-            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li>';
+            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + data.items[x].volumeInfo.authors[0] + '</li><li> Description: ' + data.items[x].volumeInfo.description + '</li>    ';
             bookRecommendation.append(drillThrough);
         
         })
