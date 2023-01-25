@@ -33,7 +33,7 @@ function appendCat(topics) {
     } else {
             mainPart.append("<img src='https://cataas.com/cat?type=" + topics + "' width='400' height='400'>")
     }
-    mainPart.children().eq(2).addClass("removeImg")
+    mainPart.children('img').addClass("removeImg")
 }
 
 
@@ -55,9 +55,13 @@ function searchBooks() {
         bookRecommendation.html("");
         do {
 
-
-            let bookRecommend = '<li class="text-center"><button>' + data.items[i].volumeInfo.title + '   By:  ' + data.items[i].volumeInfo.authors[0] + '</button></li>';
-            bookRecommendation.append(bookRecommend);
+            if (data.items[i].volumeInfo.authors[0]) {
+                let bookRecommend = '<li class="text-center"><button>' + data.items[i].volumeInfo.title + '   By:  ' + data.items[i].volumeInfo.authors[0] + '</button></li>';
+                bookRecommendation.append(bookRecommend);
+            } else {
+                let bookRecommend = '<li class="text-center"><button>' + data.items[i].volumeInfo.title + '   By:  ' + '</button></li>';
+                bookRecommendation.append(bookRecommend);
+            }
             bookRecommendation.children().eq(i).children("button").attr("id", i)
             data.items[i].volumeInfo.authors[0]
             console.log(data.items[i].volumeInfo.title);
@@ -68,8 +72,13 @@ function searchBooks() {
         $('.clickThrough').click(function() {
             bookRecommendation.html("");
             let x = ($(this).attr("id"))
-            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + data.items[x].volumeInfo.authors[0] + '</li><li> Description: ' + data.items[x].volumeInfo.description + '</li>    ';
-            bookRecommendation.append(drillThrough);
+            if (data.items[x].volumeInfo.authors[0]) {
+                let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + data.items[x].volumeInfo.authors[0] + '</li><li> Description: ' + data.items[x].volumeInfo.description + '</li>    ';
+                bookRecommendation.append(drillThrough);
+            } else {
+                let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + '</li><li> Description: ' + data.items[x].volumeInfo.description + '</li>    ';    
+                bookRecommendation.append(drillThrough);
+            }
         
         })
         
