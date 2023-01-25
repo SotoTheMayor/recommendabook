@@ -26,23 +26,24 @@
   </head>
   <body>
 
-    <header></header>
+  <header class="relative text-center text-7xl text-white font-serif">
     <!-- original image dimensions: width="1430" height="200" -->
     <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"/>  
     <!--banner text should go inside the image using css-->
-    <div class="banner-text">
+    <div class="absolute inset-1/4">
       <h2>Book House</h2>
     </div>
+  </header>
     <main class="flex h-screen">
       <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-color2"> 
        <div class="title">
-        <h1 class="text-3xl font-serif">Books Library</h1>
+        <h2 class="text-3xl font-serif">Books Library</h2>
        </div>
        <div class="pt-2 pb-2">
         <input type="text" placeholder="search your book here" />
        </div>
        <div class="history">
-        <h1 class="text-xl font-serif">Books History</h1>
+        <h3 class="text-xl font-serif">Books History</h3>
        </div>
       </div>
 
@@ -52,7 +53,7 @@
       </div>
 
       <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-color2">
-        <h1 class="text-2xl font-serif">Topics</h1>
+        <h3 class="text-3xl font-serif">Topics</h3>
 
         <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="art history">ART HISTORY</button>
         <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="business economics">BUSINESS ECONOMICS</button>
