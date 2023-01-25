@@ -28,7 +28,11 @@
 
     <header></header>
     <!-- original image dimensions: width="1430" height="200" -->
-            <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"  alt="Open Library logo">
+    <img class="h-52 w-full" src="assets/Blank-1400-x-200-copy4.jpg"/>  
+    <!--banner text should go inside the image using css-->
+    <div class="banner-text">
+      <h2>Book House</h2>
+    </div>
     <main class="flex h-screen">
       <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-color2"> 
        <div class="title">
@@ -46,13 +50,20 @@
         <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
         <ul id="bookRecommendations" class="list-none text-sm"></ul>
       </div>
-      <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-color2">
-        <h1 class="text-3xl font-serif">Topics</h1>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="romance">ROMANCE</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="history">HISTORY</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="thriller">THRILLER</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="religion">RELIGION</button>
-        <button class="border-0 shadow-lg border-slate-700 rounded-md bg-gray-200 hover:bg-white active:bg-sky-300 p-1 m-2 font-medium text-xl sBtn" id="kids"> KIDS BOOKS</button>
+
+      <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-slate-400">
+        <h1 class="text-2xl">Topics</h1>
+
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="romance">ROMANCE</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="history">HISTORY</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="thriller">THRILLER</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="religion">RELIGION</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="kids">KIDS BOOKS</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="education">EDUCATION</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="art history">ART HISTORY</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="computer science">COMPUTER SCIENCE</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="business economics">BUSINESS ECONOMICS</button>
+        <button class="border-2 border-slate-700 rounded-md bg-gray-200 p-1 m-2 sBtn" id="cook">COOK BOOKS</button>
         </button>
       </div>
     </main>

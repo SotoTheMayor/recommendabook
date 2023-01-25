@@ -62,7 +62,7 @@ function searchBooks() {
         i = 0;
         bookRecommendation.html("");
         do {
-            let bookRecommend = '<li>Title:  ' + data.items[i].volumeInfo.title + '</li>';
+            let bookRecommend = '<li class="text-center">' + data.items[i].volumeInfo.title + '   By:  ' + data.items[i].volumeInfo.authors[0] + '</li>';
             bookRecommendation.append(bookRecommend);
             console.log(data.items[i].volumeInfo.title);
             i++;
