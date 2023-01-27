@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
 let bookRecommendation = $("#bookRecommendations")
-let bookSearch = $("#searchBox")
 
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
@@ -48,9 +47,8 @@ function reviewCat() {
 
 
 function searchBooks() {
-    let book = bookSearch.value;
+    let book = bookSearch;
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
-    bookSearch.value = "";
 
     fetch(bookUrl)
     .then(function (response) {
@@ -103,11 +101,17 @@ function searchBooks() {
 
 sBtn.click(function() {
     topics = $(this).attr("id")
-    bookSearch.value = topics;
+    bookSearch = topics;
     searchBooks();
     topicCat(topics);
 })
 
+// searchbutton function
+$("#searchbutton").on("click", function() {
+    bookSearch = $('#Bookname:text').val();
+    console.log(bookSearch);
+    searchBooks();
+})
 
 })
 
