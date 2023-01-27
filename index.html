@@ -33,41 +33,47 @@
     </div>
   </header>
 
-    <main class="flex h-screen">
-      <div class="float-left h-full w-1/5 p-4 mt-6 ml-6 box-border bg-color2"> 
+    <main class="flex">
+      <div class="float-left w-1/5 p-4 mt-6 ml-6 box-border bg-color2"> 
        <div class="title">
         <h2 class="text-3xl font-serif">Books Library</h2>
        </div>
        <div class="pt-2 pb-2">
-        <input type="text" placeholder="search your book here" />
+        <input type="text" placeholder="search your book here"/>
        </div>
        <div class="history">
         <h3 class="text-xl font-serif">Books History</h3>
        </div>
       </div>
 
-      <div class="h-full m-6 p-3 w-3/5 border-0 box-border mainPart">
+      <div class="h-full m-2 p-3 w-3/5 border-0 box-border mainPart">
+        <p class="font-serif text-xl text-center">Choose a topic to the right to see your recommendations!</p>
         <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
-        <ul id="bookRecommendations" class="list-none text-sm"></ul>
+        <ul id="bookRecommendations" class="list-none text-md"></ul>
       </div>
 
       <div class="float-right h-full w-1/5 p-4 mr-6 mt-6 box-border bg-color2">
         <h3 class="text-3xl font-serif">Topics</h3>
 
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="art history">ART HISTORY</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="business economics">BUSINESS ECONOMICS</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="classic literature">CLASSIC LITERATURE</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="computer science">COMPUTER SCIENCE</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="cook">COOK BOOKS</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="education">EDUCATION</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="history">HISTORY</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="horror">HORROR</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="kids">KIDS BOOKS</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="religion">RELIGION</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="romance">ROMANCE</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="science fiction">SCIENCE FICTION</button>
-        <button class="border-0  rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="thriller">THRILLER</button>
-        </button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="art history">ART HISTORY</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="business economics">BUSINESS ECONOMICS</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="classic literature">CLASSIC LITERATURE</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="computer science">COMPUTER SCIENCE</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="cook">COOK BOOKS</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="education">EDUCATION</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="fantasy">FANTASY</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="history">HISTORY</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="horror">HORROR</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="kids">KIDS BOOKS</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="literary fiction">LITERARY FICTION</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="mystery">MYSTERY</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="poetry">POETRY</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="religion">RELIGION</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="romance">ROMANCE</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="science fiction">SCIENCE FICTION</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="thriller">THRILLER</button>
+        <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="young adult">YOUNG ADULT</button>
+        
       </div>
     </main>
 
