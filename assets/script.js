@@ -18,7 +18,7 @@ function topicCat(topics) {
     } else {
             mainPart.append("<img src='https://cataas.com/cat/cat/says/" + catWords + " " + topics + "' width='400' height='400'>")
     }
-    mainPart.children('img').addClass("removeImg relative inset-1/4")
+    mainPart.children('img').addClass("removeImg relative inset-1/4 rounded-lg")
 }
 
 
