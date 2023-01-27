@@ -2,43 +2,14 @@
 $(document).ready(function(){
 let bookRecommendation = $("#bookRecommendations")
 let bookSearch = $("#searchBox")
-let imgReview = $(".reviewImage")
-let textReview = $(".reviewText")
+
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
 let author = "N/A";
 let description = "";
 
 
-let reviews = 'https://cataas.com/cat?width=250';
-
-
-
-
-fetch(reviews)
-
-let image = new Image();
-    image.src = reviews;
-    imgReview.append(image);
-
-    let textArr = ["10/10 Would read again!", "I couldn't put it down, it was amazing!", "This book made me cry happy tears", "Nothing is better than a good book, and no book is better than this one!"]
-    textReview.text(textArr[Math.floor(Math.random() * textArr.length)]);
-
-
-    
-    
-// function appendCat(topics) {
-//     console.log(topics)
-//     $('img').remove('.removeImg')
-//     if (topics == "thriller") {
-//             mainPart.append("<img src='https://cataas.com/cat?type=startled' width='400' height='400'>")
-//     } else {
-//             mainPart.append("<img src='https://cataas.com/cat?type=" + topics + "' width='400' height='400'>")
-//     }
-//     mainPart.children('img').addClass("removeImg")
-// }
-
-function appendCat(topics) {
+function topicCat(topics) {
     catStatement = ["I like", "Good choice.  I love", "Great choice with", "All day I dream about"]
     catWords = catStatement[Math.floor(Math.random() * catStatement.length)]
     console.log(topics)
@@ -50,6 +21,28 @@ function appendCat(topics) {
     }
     mainPart.children('img').addClass("removeImg")
 }
+
+
+function reviewCat() {
+    let reviews = 'https://cataas.com/cat';
+    let reviewArr = ['"10/10 Would read again!"', '"I could hardly put it down, it was amazing!"', '"This book made me cry happy tears"', '"Nothing is better than a good book, and no book is better than this one!"']
+    textReview = (reviewArr[Math.floor(Math.random() * reviewArr.length)]);
+    console.log()
+    $('img').remove('.removeImg')
+    bookRecommendation.append("<img src=" + reviews + " width='200' height='200'/>")
+    bookRecommendation.children('img').addClass("removeImg")
+    bookRecommendation.append("<p>" + textReview + "</p>")
+}
+
+
+
+
+
+
+    
+    
+
+
 
 
 
@@ -100,6 +93,7 @@ function searchBooks() {
             }
             let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + author + '</li><li> Description: ' + description + '</li>    ';
             bookRecommendation.append(drillThrough);
+            reviewCat();
         })
         
     })
@@ -111,7 +105,7 @@ sBtn.click(function() {
     topics = $(this).attr("id")
     bookSearch.value = topics;
     searchBooks();
-    appendCat(topics);
+    topicCat(topics);
 })
 
 
