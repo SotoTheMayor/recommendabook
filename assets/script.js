@@ -27,17 +27,29 @@ let image = new Image();
 
     
     
+// function appendCat(topics) {
+//     console.log(topics)
+//     $('img').remove('.removeImg')
+//     if (topics == "thriller") {
+//             mainPart.append("<img src='https://cataas.com/cat?type=startled' width='400' height='400'>")
+//     } else {
+//             mainPart.append("<img src='https://cataas.com/cat?type=" + topics + "' width='400' height='400'>")
+//     }
+//     mainPart.children('img').addClass("removeImg")
+// }
+
 function appendCat(topics) {
+    catStatement = ["I like", "Good choice.  I love", "Great choice with", "All day I dream about"]
+    catWords = catStatement[Math.floor(Math.random() * catStatement.length)]
     console.log(topics)
     $('img').remove('.removeImg')
     if (topics == "thriller") {
-            mainPart.append("<img src='https://cataas.com/cat?type=startled' width='400' height='400'>")
+            mainPart.append("<img src='https://cataas.com/cat/startled/says/" + catWords + " " + topics + "' width='400' height='400'>")
     } else {
-            mainPart.append("<img src='https://cataas.com/cat?type=" + topics + "' width='400' height='400'>")
+            mainPart.append("<img src='https://cataas.com/cat/cat/says/" + catWords + " " + topics + "' width='400' height='400'>")
     }
     mainPart.children('img').addClass("removeImg")
 }
-
 
 
 
