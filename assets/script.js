@@ -2,11 +2,11 @@
 $(document).ready(function(){
 let bookRecommendation = $("#bookRecommendations")
 let bookSearch = $("#searchBox")
-
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
 let author = "N/A";
 let description = "";
+var listHistory = $("#history")
 
 
 function topicCat(topics) {
@@ -19,7 +19,7 @@ function topicCat(topics) {
     } else {
             mainPart.append("<img src='https://cataas.com/cat/cat/says/" + catWords + " " + topics + "' width='400' height='400'>")
     }
-    mainPart.children('img').addClass("removeImg")
+    mainPart.children('img').addClass("removeImg items-center")
 }
 
 
@@ -30,20 +30,9 @@ function reviewCat() {
     console.log()
     $('img').remove('.removeImg')
     bookRecommendation.append("<img src=" + reviews + " width='200' height='200'/>")
-    bookRecommendation.children('img').addClass("removeImg")
+    bookRecommendation.children('img').addClass("removeImg items-center")
     bookRecommendation.append("<p>" + textReview + "</p>")
 }
-
-
-
-
-
-
-    
-    
-
-
-
 
 
 
@@ -91,13 +80,112 @@ function searchBooks() {
             } else {
                 description = "N/A"
             }
-            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + author + '</li><li> Description: ' + description + '</li>    ';
+            let title = data.items[x].volumeInfo.title;
+            let drillThrough = '<li><button>Title:  ' + title + '</button></li><li>Author: ' + author + '</li><li> Description: ' + description + '</li>    ';
+            storageAdjust(data.items[x]);
             bookRecommendation.append(drillThrough);
             reviewCat();
+            function storageAdjust() {
+                bookHistory.h5 = bookHistory.h4
+                bookHistory.Display5 = bookHistory.Display4
+                bookHistory.h4 = bookHistory.h3
+                bookHistory.Display4 = bookHistory.Display3
+                bookHistory.h3 = bookHistory.h2
+                bookHistory.Display3 = bookHistory.Display2
+                bookHistory.h2 = bookHistory.h1
+                bookHistory.Display2 = bookHistory.Display1
+                bookHistory.h1 = [title, author, description]
+                bookHistory.Display1 = '<li><button>Title:  ' + title + '</button></li><li>Author: ' + author + '</li><li> Description: ' + description + '</button></li>'
+                localStorage.setItem("bookHistory", JSON.stringify(bookHistory));
+            }
+            listHistory.prepend('<li><button>Title:  ' + title + 'Author: ' + author + '</button></li>')
+            listHistory.children().eq(5).children().remove()
+            listHistory.children().eq(5).remove()
+            listHistory.children().addClass("list-group-item text-start")
+            listHistory.children().children().addClass("rounded bg-dark-subtle my-2")
         })
         
     })
 }
+
+
+//creates local storage if it doesn't already exist, so when it is called later there isn't an error even if it is empty
+if (!localStorage.getItem("bookHistory")) {
+    var bookHistory = {
+        h1: [],
+        Display1: "",
+        h2: [],
+        Display2: "",
+        h3: [],
+        Display3: "",
+        h4: [],
+        Display4: "",
+        h5: [],
+        Display5: "",
+    }
+    localStorage.setItem("bookHistory", JSON.stringify(bookHistory));
+} else {
+    var bookHistory = JSON.parse(localStorage.getItem("bookHistory"));
+};
+
+
+//if history exists in local storage, appends buttons on page refresh
+listHistory.append(bookHistory.h1[0])
+listHistory.append(bookHistory.h2[0])
+listHistory.append(bookHistory.h3[0])
+listHistory.append(bookHistory.h4[0])
+listHistory.append(bookHistory.h5[0])
+listHistory.children().addClass("list-group-item text-start")
+listHistory.children().children().addClass("rounded bg-dark-subtle my-2")
+listHistory.children().eq(0).children().attr("id", "hBtn1");
+listHistory.children().eq(1).children().attr("id", "hBtn2");
+listHistory.children().eq(2).children().attr("id", "hBtn3");
+listHistory.children().eq(3).children().attr("id", "hBtn4");
+listHistory.children().eq(4).children().attr("id", "hBtn5");
+
+
+$('#hBtn1').click(function(){ 
+    title = bookHistory.h1[0];
+    author = bookHistory.h1[1];
+    description = bookHistory.h1[2];
+    bookRecommendation.html("");
+    bookRecommendation.append(bookHistory.Display1)
+    reviewCat();
+    
+})
+
+$('#hBtn2').click(function(){
+    title = bookHistory.h2[0];
+    author = bookHistory.h2[1];
+    description = bookHistory.h2[2];
+    bookRecommendation.html("");
+    bookRecommendation.append(bookHistory.Display2)
+    reviewCat();
+})
+
+$('#hBtn3').click(function(){
+    title = bookHistory.h3[0];
+    author = bookHistory.h3[1];
+    description = bookHistory.h3[2];
+    bookRecommendation.html("");
+    bookRecommendation.append(bookHistory.Display3)
+})
+
+$('#hBtn4').click(function(){
+    title = bookHistory.h4[0];
+    author = bookHistory.h4[1];
+    description = bookHistory.h4[2];
+    bookRecommendation.html("");
+    bookRecommendation.append(bookHistory.Display4)
+})
+
+$('#hBtn5').click(function(){
+    title = bookHistory.h5[0];
+    author = bookHistory.h5[1];
+    description = bookHistory.h5[2];
+    bookRecommendation.html("");
+    bookRecommendation.append(bookHistory.Display5)
+})
 
 
 
