@@ -39,6 +39,8 @@ let image = new Image();
 // }
 
 function appendCat(topics) {
+    catStatement = ["I like", "Good choice.  I love", "Great choice with", "All day I dream about"]
+    catWords = catStatement[Math.floor(Math.random() * catStatement.length)]
     console.log(topics)
     $('img').remove('.removeImg')
     if (topics == "thriller") {
@@ -49,8 +51,6 @@ function appendCat(topics) {
     mainPart.children('img').addClass("removeImg")
 }
 
-catStatement = ["I like", "Good choice.  I love", "Great choice with", "All day I dream about"]
-catWords = catStatement[Math.floor(Math.random() * catStatement.length)]
 
 
 
