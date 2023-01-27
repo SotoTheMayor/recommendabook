@@ -6,6 +6,8 @@ let imgReview = $(".reviewImage")
 let textReview = $(".reviewText")
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
+let author = "N/A";
+let description = "";
 
 
 let reviews = 'https://cataas.com/cat?width=250';
@@ -33,7 +35,7 @@ function appendCat(topics) {
     } else {
             mainPart.append("<img src='https://cataas.com/cat?type=" + topics + "' width='400' height='400'>")
     }
-    mainPart.children().eq(2).addClass("removeImg")
+    mainPart.children('img').addClass("removeImg")
 }
 
 
@@ -54,13 +56,15 @@ function searchBooks() {
         i = 0;
         bookRecommendation.html("");
         do {
-
-
-            let bookRecommend = '<li class="text-center"><button>' + data.items[i].volumeInfo.title + '   By:  ' + data.items[i].volumeInfo.authors[0] + '</button></li>';
+            if (data.items[i].volumeInfo.authors) {
+                author = data.items[i].volumeInfo.authors
+            } else {
+                author = "N/A"
+            }
+            let bookRecommend = '<li class="text-center"><button>' + data.items[i].volumeInfo.title + '   By:  ' + author + '</button></li>';
             bookRecommendation.append(bookRecommend);
             bookRecommendation.children().eq(i).children("button").attr("id", i)
-            data.items[i].volumeInfo.authors[0]
-            console.log(data.items[i].volumeInfo.title);
+  
             i++;
         } while (i < 10);
         bookRecommendation.children().children("button").addClass('clickThrough')
@@ -68,9 +72,20 @@ function searchBooks() {
         $('.clickThrough').click(function() {
             bookRecommendation.html("");
             let x = ($(this).attr("id"))
-            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + data.items[x].volumeInfo.authors[0] + '</li><li> Description: ' + data.items[x].volumeInfo.description + '</li>    ';
+            if (data.items[x].volumeInfo.authors) {
+                author = data.items[x].volumeInfo.authors
+            } else {
+                author = "N/A";
+            }
+            if (data.items[x].volumeInfo.description) {
+                description = data.items[x].volumeInfo.description
+            } else if (data.items[x].searchInfo.textSnippet) {
+                description = data.items[x].searchInfo.textSnippet
+            } else {
+                description = "N/A"
+            }
+            let drillThrough = '<li><button>Title:  ' + data.items[x].volumeInfo.title + '</button></li><li>Author: ' + author + '</li><li> Description: ' + description + '</li>    ';
             bookRecommendation.append(drillThrough);
-        
         })
         
     })
@@ -80,7 +95,6 @@ function searchBooks() {
 
 sBtn.click(function() {
     topics = $(this).attr("id")
-    console.log(topics);
     bookSearch.value = topics;
     searchBooks();
     appendCat(topics);
