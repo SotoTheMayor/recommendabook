@@ -1,7 +1,9 @@
 
 $(document).ready(function(){
 let bookRecommendation = $("#bookRecommendations")
+
 let bookSearch = $("#searchBox")
+
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
 let author = "N/A";
@@ -19,7 +21,8 @@ function topicCat(topics) {
     } else {
             mainPart.append("<img src='https://cataas.com/cat/cat/says/" + catWords + " " + topics + "' width='400' height='400'>")
     }
-    mainPart.children('img').addClass("removeImg items-center")
+
+    mainPart.children('img').addClass("removeImg relative inset-1/4")
 }
 
 
@@ -37,9 +40,8 @@ function reviewCat() {
 
 
 function searchBooks() {
-    let book = bookSearch.value;
+    let book = bookSearch;
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
-    bookSearch.value = "";
 
     fetch(bookUrl)
     .then(function (response) {
@@ -191,11 +193,17 @@ $('#hBtn5').click(function(){
 
 sBtn.click(function() {
     topics = $(this).attr("id")
-    bookSearch.value = topics;
+    bookSearch = topics;
     searchBooks();
     topicCat(topics);
 })
 
+// searchbutton function
+$("#searchbutton").on("click", function() {
+    bookSearch = $('#Bookname:text').val();
+    console.log(bookSearch);
+    searchBooks();
+})
 
 })
 

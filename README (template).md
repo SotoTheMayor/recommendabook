@@ -2,6 +2,9 @@
 
 ## Description
 
+We created this project to practice our skills in using server-side APIs, CSS frameworks, client-side storage, and more. We also used the project to practice working together as a team. Our app is designed to provide book recommendations in a fun way (book recs from cats!)
+I (Hannah) learned how to use a new CSS framework, Tailwind CSS through this project.
+
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?
@@ -11,18 +14,15 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+N/A
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+N/A
 
 ## Usage
+
+On the right of our page you will find a list of topics. If you click on one of these you will see a list of book recommendations, and you can click on a title to read more about it.
 
 Provide instructions and examples for use. Include screenshots as needed.
 
@@ -34,19 +34,12 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+source of cat image #1 https://www.rawpixel.com/image/6196752/png-sticker-journal
+source of cat image #2 https://www.publicdomainpictures.net/en/view-image.php?image=463558&picture=cat
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+MIT
 
 ## Badges
 
