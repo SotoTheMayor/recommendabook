@@ -44,14 +44,17 @@
        <div class="title">
         <h2 class="text-3xl font-serif">Books Library</h2>
        </div>
-       <div class="pt-2 pb-2">
-        <input type="text" placeholder="search your book here"/>
-       </div>
+       <aside class="col d-grid gap-2 col-6 mx-auto">
+        <input id="Bookname" type="text" />
+        <button id="searchbutton" class="btn btn-primary m-3 p-3">Search Book</button>
+       
        <div class="history">
         <h3 class="text-xl font-serif">Books History</h3>
+        <aside class="d-grid gap-2 col-12 mx-auto" id="history"></aside>
+        </aside>
        </div>
       </div>
-
+      
       <div class="h-full m-2 p-3 w-3/5 border-0 box-border mainPart">
         <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
         <ul id="bookRecommendations" class="list-none text-md"></ul>
@@ -83,8 +86,7 @@
     </main>
 
     <footer class="flex p-6 m-6 justify-center items-center bg-slate-200 w-full">
-        <div class="reviewImage"></div>
-        <div class="reviewText"></div>
+
     </footer>
     <footer class="contact">
       <p>CONTACT INFO</p>
