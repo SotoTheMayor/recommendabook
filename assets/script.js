@@ -79,8 +79,10 @@ function searchBooks() {
             }
             if (data.items[x].volumeInfo.description) {
                 description = data.items[x].volumeInfo.description
-            } else if (data.items[x].searchInfo.textSnippet) {
-                description = data.items[x].searchInfo.textSnippet
+            } else if (data.items[x].searchInfo) {
+                if (data.items[x].searchInfo.textSnippet) {
+                    description = data.items[x].searchInfo.textSnippet
+                }
             } else {
                 description = "N/A"
             }
