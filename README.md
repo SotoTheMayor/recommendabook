@@ -25,14 +25,7 @@ N/A
 
 On the right of our page you will find a list of topics. If you click on one of these you will see a list of book recommendations, and you can click on a title to read more about it.
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
+![screen shot](./assets/images/purrfect-book.gif)
 ## Credits
 
 source of cat image #1 https://www.rawpixel.com/image/6196752/png-sticker-journal
