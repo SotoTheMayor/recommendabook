@@ -114,59 +114,64 @@ function searchBooks() {
             listHistory.children().addClass("list-group-item text-start list-none rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-md font-medium p-1 m-2")
             listHistory.children().children().addClass("rounded bg-dark-subtle my-2")
             
-            $('#hBtn1').click(function(){ 
-                bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
-                title = bookHistory.h1[0];
-                author = bookHistory.h1[1];
-                description = bookHistory.h1[2];
-                bookRecommendation.html("");
-                bookRecommendation.append(bookHistory.Display1)
-                reviewCat();
-            })
-            
-            $('#hBtn2').click(function(){
-                bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
-                title = bookHistory.h2[0];
-                author = bookHistory.h2[1];
-                description = bookHistory.h2[2];
-                bookRecommendation.html("");
-                bookRecommendation.append(bookHistory.Display2)
-                reviewCat();
-            })
-            
-            $('#hBtn3').click(function(){
-                bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
-                title = bookHistory.h3[0];
-                author = bookHistory.h3[1];
-                description = bookHistory.h3[2];
-                bookRecommendation.html("");
-                bookRecommendation.append(bookHistory.Display3)
-                reviewCat();
-            })
-            
-            $('#hBtn4').click(function(){
-                bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
-                title = bookHistory.h4[0];
-                author = bookHistory.h4[1];
-                description = bookHistory.h4[2];
-                bookRecommendation.html("");
-                bookRecommendation.append(bookHistory.Display4)
-                reviewCat();
-            
-            })
-            
-            $('#hBtn5').click(function(){
-                bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
-                title = bookHistory.h5[0];
-                author = bookHistory.h5[1];
-                description = bookHistory.h5[2];
-                bookRecommendation.html("");
-                bookRecommendation.append(bookHistory.Display5)
-                reviewCat();
-            
-            })
+            buttonCall()
+
         })
         
+    })
+}
+
+function buttonCall() {
+    $('#hBtn1').click(function(){ 
+        bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
+        title = bookHistory.h1[0];
+        author = bookHistory.h1[1];
+        description = bookHistory.h1[2];
+        bookRecommendation.html("");
+        bookRecommendation.append(bookHistory.Display1)
+        reviewCat();
+    })
+    
+    $('#hBtn2').click(function(){
+        bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
+        title = bookHistory.h2[0];
+        author = bookHistory.h2[1];
+        description = bookHistory.h2[2];
+        bookRecommendation.html("");
+        bookRecommendation.append(bookHistory.Display2)
+        reviewCat();
+    })
+    
+    $('#hBtn3').click(function(){
+        bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
+        title = bookHistory.h3[0];
+        author = bookHistory.h3[1];
+        description = bookHistory.h3[2];
+        bookRecommendation.html("");
+        bookRecommendation.append(bookHistory.Display3)
+        reviewCat();
+    })
+    
+    $('#hBtn4').click(function(){
+        bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
+        title = bookHistory.h4[0];
+        author = bookHistory.h4[1];
+        description = bookHistory.h4[2];
+        bookRecommendation.html("");
+        bookRecommendation.append(bookHistory.Display4)
+        reviewCat();
+    
+    })
+    
+    $('#hBtn5').click(function(){
+        bookHistory = JSON.parse(localStorage.getItem("bookHistory"))
+        title = bookHistory.h5[0];
+        author = bookHistory.h5[1];
+        description = bookHistory.h5[2];
+        bookRecommendation.html("");
+        bookRecommendation.append(bookHistory.Display5)
+        reviewCat();
+    
     })
 }
 
@@ -205,7 +210,7 @@ listHistory.children().eq(2).children().attr("id", "hBtn3");
 listHistory.children().eq(3).children().attr("id", "hBtn4");
 listHistory.children().eq(4).children().attr("id", "hBtn5");
 
-
+buttonCall()
 
 
 
