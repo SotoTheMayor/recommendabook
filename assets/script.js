@@ -1,16 +1,13 @@
-
 $(document).ready(function(){
 let bookRecommendation = $("#bookRecommendations")
-
 let bookSearch = $("#searchBox")
-
 let mainPart = $(".mainPart")
 let sBtn = $('.sBtn')
 let author = "N/A";
 let description = "";
 var listHistory = $("#history")
 
-
+//appends a random cat image when a topic is selected from the available list, as well as randomized text using the API to overlay it on the cat image
 function topicCat(topics) {
     catStatement = ["I like", "Good choice.  I love", "Great choice with", "All day I dream about"]
     catWords = catStatement[Math.floor(Math.random() * catStatement.length)]
@@ -23,7 +20,7 @@ function topicCat(topics) {
     mainPart.children('img').addClass("removeImg relative inset-1/4 rounded-lg items-center")
 }
 
-
+//appends a random cat and a random recommendation once a book is selected from the list pulled by the topic choice
 function reviewCat() {
     let reviews = 'https://cataas.com/cat';
     let reviewArr = ['"10/10 Would read again!"', '"I could hardly put it down, it was amazing!"', '"This book made me cry happy tears"', '"Nothing is better than a good book, and no book is better than this one!"', '"Purrfect book for a lazy afternoon"']
@@ -38,7 +35,7 @@ function reviewCat() {
 }
 
 
-
+//API call to Google books, utilized for searching both by topic and by keyword
 function searchBooks() {
     let book = bookSearch;
     let bookUrl = "https://www.googleapis.com/books/v1/volumes?q=" + book;
@@ -50,6 +47,7 @@ function searchBooks() {
     .then(function (data) {
         i = 0;
         bookRecommendation.html("");
+        //do/while loop to append 10 titles and authors from the API call
         do {
             if (data.items[i].volumeInfo.authors) {
                 author = data.items[i].volumeInfo.authors
@@ -86,6 +84,7 @@ function searchBooks() {
             storageAdjust(data.items[x]);
             bookRecommendation.append(drillThrough);
             reviewCat();
+            //adjusts localstorage to keep only the most recent 5 searches in the history
             function storageAdjust() {
                 bookHistory.h5 = bookHistory.h4
                 bookHistory.Display5 = bookHistory.Display4
@@ -99,6 +98,7 @@ function searchBooks() {
                 bookHistory.Display1 = '<li><button>Title:  ' + title + '</button></li><li>Author: ' + author + '</li><li> Description: ' + description + '</button></li>'
                 localStorage.setItem("bookHistory", JSON.stringify(bookHistory));
             }
+            //adjusts id's associated with history and keeps only 5 displaying
             listHistory.prepend('<li><button><b><i>Title:  </b></i>' + title + '  <b><i>Author:</b></i> ' + author + '</button></li>')
             listHistory.children().eq(0).children().attr("id", "hBtn1")
             listHistory.children().eq(1).children().remove("id", "hBtn1")
@@ -121,6 +121,7 @@ function searchBooks() {
     })
 }
 
+//function that is called to set button values each time the history is changed 
 function buttonCall() {
     $('#hBtn1').click(function(){ 
         title = bookHistory.h1[0];
@@ -171,7 +172,7 @@ function buttonCall() {
 }
 
 
-//creates local storage if it doesn't already exist, so when it is called later there isn't an error even if it is empty
+//creates local storage if it doesn't already exist, so when it is called later there isn't an error even if it is empty, or parses it if it does exist
 if (!localStorage.getItem("bookHistory")) {
     var bookHistory = {
         h1: [],
@@ -191,7 +192,7 @@ if (!localStorage.getItem("bookHistory")) {
 };
 
 
-//if history exists in local storage, appends buttons on page refresh
+//based on info saved in local storage, appends buttons on page refresh
 listHistory.append('<li><button><b><i>Title:</b></i>  ' + bookHistory.h1[0] + '  <b><i>Author:</b></i> ' + bookHistory.h1[1] + '</button></li>')
 listHistory.append('<li><button><b><i>Title:</b></i>  ' + bookHistory.h2[0] + '  <b><i>Author:</b></i> ' + bookHistory.h2[1] + '</button></li>')
 listHistory.append('<li><button><b><i>Title:</b></i>  ' + bookHistory.h3[0] + '  <b><i>Author:</b></i> ' + bookHistory.h3[1] + '</button></li>')
@@ -209,7 +210,7 @@ buttonCall()
 
 
 
-
+//search button function for searching books by topic
 sBtn.click(function() {
     topics = $(this).attr("id")
     bookSearch = topics;
@@ -217,7 +218,7 @@ sBtn.click(function() {
     topicCat(topics);
 })
 
-// searchbutton function
+// searchbutton function for searching books by name
 $("#searchbutton").on("click", function() {
     bookSearch = $('#Bookname:text').val();
     searchBooks();
