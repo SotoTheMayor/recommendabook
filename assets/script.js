@@ -31,7 +31,7 @@ function reviewCat() {
     textReview = (reviewArr[Math.floor(Math.random() * reviewArr.length)]);
     $('img').remove('.removeImg')
     bookRecommendation.append("<img src=" + reviews + " width='200' height='200'/>")
-    bookRecommendation.children('img').addClass("removeImg items-center")
+    bookRecommendation.children('img').addClass("removeImg relative inset-1/4 rounded-lg")
     bookRecommendation.append("<p>" + textReview + "</p>")
 }
 
@@ -111,7 +111,7 @@ function searchBooks() {
             listHistory.children().eq(4).children().attr("id", "hBtn5")
             listHistory.children().eq(5).children().remove()
             listHistory.children().eq(5).remove()
-            listHistory.children().addClass("list-group-item text-start")
+            listHistory.children().addClass("list-group-item text-start list-none rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-md font-medium p-1 m-2")
             listHistory.children().children().addClass("rounded bg-dark-subtle my-2")
             
             $('#hBtn1').click(function(){ 
@@ -197,7 +197,7 @@ listHistory.append('<li><button>Title:  ' + bookHistory.h2[0] + 'Author: ' + boo
 listHistory.append('<li><button>Title:  ' + bookHistory.h3[0] + 'Author: ' + bookHistory.h3[1] + '</button></li>')
 listHistory.append('<li><button>Title:  ' + bookHistory.h4[0] + 'Author: ' + bookHistory.h4[1] + '</button></li>')
 listHistory.append('<li><button>Title:  ' + bookHistory.h5[0] + 'Author: ' + bookHistory.h5[1] + '</button></li>')
-listHistory.children().addClass("list-group-item text-start")
+listHistory.children().addClass("list-group-item text-start list-none rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-md font-medium p-1 m-2")
 listHistory.children().children().addClass("rounded bg-dark-subtle my-2")
 listHistory.children().eq(0).children().attr("id", "hBtn1");
 listHistory.children().eq(1).children().attr("id", "hBtn2");
