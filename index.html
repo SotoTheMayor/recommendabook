@@ -45,9 +45,9 @@
     </div>
   </header>
  
-    <main class="flex">
+    <main class="block md:flex">
     <!-- below is the markup and styling for the left side section -->
-      <div class="float-left w-1/5 p-4 mt-5 ml-6 box-border bg-color2 rounded-md"> 
+      <div class="mr-6 md:mr-0 md:float-left md:w-1/5 p-4 mt-5 ml-6 box-border bg-color2 rounded-md"> 
        <div class="title">
         <h2 class="text-3xl font-serif mb-2">Books Library</h2>
        </div>
@@ -61,12 +61,12 @@
        </div>
       </div>
     <!-- below is the markup and styling for the main/middle section -->  
-      <div class="h-full m-2 p-4 w-3/5 border-0 box-border mainPart">
-        <h1 class="text-5xl text-center font-serif">Book Recommendations</h1>
+      <div class=" m-2 p-4 md:w-3/5 border-0 box-border mainPart">
+        <h1 class="text-4xl md:text-5xl text-center font-serif">Book Recommendations</h1>
         <ul id="bookRecommendations" class="list-none text-md p-4"></ul>
       </div>
     <!-- below is the markup and styling for the right side section -->
-      <div class="float-right  w-1/5 p-4 mr-6 mt-5 box-border bg-color2 rounded-md">
+      <div class="ml-6 md:ml-0 md:float-right md:w-1/5 p-4 mr-6 mt-5 box-border bg-color2 rounded-md">
         <h3 class="text-3xl font-serif">Topics</h3>
 
         <button class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-xl font-medium p-1 m-2 sBtn" id="art history">ART HISTORY</button>
