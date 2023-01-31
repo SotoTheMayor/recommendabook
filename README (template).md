@@ -1,9 +1,10 @@
-# <Your-Project-Title>
+# <The Purrfect Book>
 
 ## Description
 
 We created this project to practice our skills in using server-side APIs, CSS frameworks, client-side storage, and more. We also used the project to practice working together as a team. Our app is designed to provide book recommendations in a fun way (book recs from cats!)
 I (Hannah) learned how to use a new CSS framework, Tailwind CSS through this project.
+Jason learned the importance of when a button function is created vs called, as well as using fetch to get around cache issues with the image
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
