@@ -100,6 +100,15 @@ function searchBooks() {
                 localStorage.setItem("bookHistory", JSON.stringify(bookHistory));
             }
             listHistory.prepend('<li><button>Title:  ' + title + 'Author: ' + author + '</button></li>')
+            listHistory.children().eq(0).children().attr("id", "hBtn1")
+            listHistory.children().eq(1).children().remove("id", "hBtn1")
+            listHistory.children().eq(1).children().attr("id", "hBtn2")
+            listHistory.children().eq(2).children().remove("id", "hBtn2")
+            listHistory.children().eq(2).children().attr("id", "hBtn3")
+            listHistory.children().eq(3).children().remove("id", "hBtn3")
+            listHistory.children().eq(3).children().attr("id", "hBtn4")
+            listHistory.children().eq(4).children().remove("id", "hBtn4")
+            listHistory.children().eq(4).children().attr("id", "hBtn5")
             listHistory.children().eq(5).children().remove()
             listHistory.children().eq(5).remove()
             listHistory.children().addClass("list-group-item text-start")
