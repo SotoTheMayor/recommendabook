@@ -25,7 +25,7 @@
 
   </head>
   <body>
-  <header class="relative text-center text-4xl sm:text-6xl md:text-7xl text-white font-serif ">
+  <header class="relative text-center text-3xl sm:text-6xl md:text-7xl text-white font-serif ">
     <!-- original image dimensions: width="1430" height="200" -->
     <img class="h-52 w-full " src="assets/images/background-image.jpg"/>  
     <div class="absolute right-8 bottom-2 lg:inset-1/4">
@@ -50,15 +50,15 @@
  
     <main class="block md:flex">
     <!-- below is the markup and styling for the left side section -->
-      <div class="mr-6 md:mr-0 md:float-left md:w-1/5 p-4 mt-5 ml-6 box-border bg-color2 rounded-md"> 
+      <div class="object-bottom mr-6 md:mr-0 md:float-left md:w-1/5 p-4 mt-5 ml-6 box-border bg-color2 rounded-md"> 
        <div class="title">
-        <h2 class="text-3xl font-serif mb-2">Books Library</h2>
+        <h2 class="text-3xl font-serif mb-1">Books Library</h2>
        </div>
        <aside class="col d-grid gap-2 col-6 mx-auto">
-        <input id="Bookname" type="text" />
-        <button id="searchbutton" class="btn btn-primary m-3 p-3">Search Book</button>
+        <input id="Bookname" type="text" class="w-32"/>
+        <button id="searchbutton" class="rounded-md shadow-lg bg-color3 hover:bg-color5 active:bg-color4 text-md font-medium btn btn-primary m-3 p-1 ">Search Book</button>
        <div class="history">
-        <h3 class="text-xl font-serif">Books History</h3>
+        <h3 class="text-2xl font-serif mt-4">Books History</h3>
         <aside class="d-grid gap-2 col-12 mx-auto" id="history"></aside>
         </aside>
        </div>
