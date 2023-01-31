@@ -14,7 +14,6 @@ var listHistory = $("#history")
 function topicCat(topics) {
     catStatement = ["I like", "Good choice.  I love", "Great choice with", "All day I dream about"]
     catWords = catStatement[Math.floor(Math.random() * catStatement.length)]
-    console.log(topics)
     $('img').remove('.removeImg')
     if (topics == "thriller") {
             mainPart.append("<img src='https://cataas.com/cat/startled/says/" + catWords + " " + topics + "' width='400' height='400'>")
@@ -49,7 +48,6 @@ function searchBooks() {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
         i = 0;
         bookRecommendation.html("");
         do {
@@ -222,7 +220,6 @@ sBtn.click(function() {
 // searchbutton function
 $("#searchbutton").on("click", function() {
     bookSearch = $('#Bookname:text').val();
-    console.log(bookSearch);
     searchBooks();
 })
 
