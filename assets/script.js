@@ -131,11 +131,11 @@ if (!localStorage.getItem("bookHistory")) {
 
 
 //if history exists in local storage, appends buttons on page refresh
-listHistory.append(bookHistory.h1[0])
-listHistory.append(bookHistory.h2[0])
-listHistory.append(bookHistory.h3[0])
-listHistory.append(bookHistory.h4[0])
-listHistory.append(bookHistory.h5[0])
+listHistory.append('<li><button>Title:  ' + bookHistory.h1[0] + 'Author: ' + bookHistory.h1[1] + '</button></li>')
+listHistory.append('<li><button>Title:  ' + bookHistory.h2[0] + 'Author: ' + bookHistory.h2[1] + '</button></li>')
+listHistory.append('<li><button>Title:  ' + bookHistory.h3[0] + 'Author: ' + bookHistory.h3[1] + '</button></li>')
+listHistory.append('<li><button>Title:  ' + bookHistory.h4[0] + 'Author: ' + bookHistory.h4[1] + '</button></li>')
+listHistory.append('<li><button>Title:  ' + bookHistory.h5[0] + 'Author: ' + bookHistory.h5[1] + '</button></li>')
 listHistory.children().addClass("list-group-item text-start")
 listHistory.children().children().addClass("rounded bg-dark-subtle my-2")
 listHistory.children().eq(0).children().attr("id", "hBtn1");
