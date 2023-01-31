@@ -221,6 +221,7 @@ sBtn.click(function() {
 $("#searchbutton").on("click", function() {
     bookSearch = $('#Bookname:text').val();
     searchBooks();
+    $('#Bookname:text').val("");
 })
 
 })
