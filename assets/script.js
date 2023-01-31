@@ -26,7 +26,7 @@ function topicCat(topics) {
 
 function reviewCat() {
     let reviews = 'https://cataas.com/cat';
-    let reviewArr = ['"10/10 Would read again!"', '"I could hardly put it down, it was amazing!"', '"This book made me cry happy tears"', '"Nothing is better than a good book, and no book is better than this one!"']
+    let reviewArr = ['"10/10 Would read again!"', '"I could hardly put it down, it was amazing!"', '"This book made me cry happy tears"', '"Nothing is better than a good book, and no book is better than this one!"', '"Purrfect book for a lazy afternoon"']
     textReview = (reviewArr[Math.floor(Math.random() * reviewArr.length)]);
     $('img').remove('.removeImg')
     fetch(reviews, {
